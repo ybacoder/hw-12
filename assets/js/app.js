@@ -64,7 +64,7 @@ function renderText(textGroup, newXScale, currentSelection) {
     textGroup
       .transition()
       .duration(500)
-      .attr("x", d => newXScale(d[currentSelection]) - 6)
+      .attr("x", d => newXScale(d[currentSelection]))
   
     return textGroup
 }
@@ -93,7 +93,7 @@ function renderText(textGroup, newXScale, currentSelection) {
         chartGroup.append("g").call(leftAxis)
   
         let circlesGroup = chartGroup
-            .selectAll("circle")
+            .selectAll()
             .data(demoData)
             .enter()
             .append("circle")
@@ -104,7 +104,7 @@ function renderText(textGroup, newXScale, currentSelection) {
             .attr("opacity", ".5")
 
         let textGroup = chartGroup
-            .selectAll("text")
+            .selectAll()
             .data(demoData)
             .enter()
             .append("text")
